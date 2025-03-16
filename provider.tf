@@ -1,23 +1,29 @@
-provider "aws" {
-  region = "ap-south-1"
+variable "instance_ami_mumbai" {
+  type        = string
+  default = "ami-0d473344347276854"
 }
 
 
-provider "aws" {
-  region = "ap-southeast-1"
-  alias = "singpore"
+
+variable "instance_ami_hyd" {
+  type        = string
+  default = "ami-0d473344347276854"
 }
 
-provider "aws" {
-  region = "ap-south-2"
-  alias = "hyd"
+variable "instance_count" {
+  type        = number
 }
 
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "5.85.0"
-    }
-  }
+variable "instance_type" {
+  type        = string
+  default     = "t2.nano"
+}
+
+variable "instance_type_hyd" {
+  type = string
+}
+
+
+variable "bucket_name" {
+  type = string
 }
